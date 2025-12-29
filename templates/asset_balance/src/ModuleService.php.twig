@@ -1,0 +1,38 @@
+<?php
+
+namespace {{ namespace }};
+
+
+use Patrimeo\Contracts\AssetBalance;
+use Filament\Schemas\Components\Section;
+use Patrimeo\Contracts\Errors\AddonError;
+
+class {{ classBaseName }}Service implements AssetBalance
+{
+
+    public function __construct(array $attributes)
+    {
+        //
+    }
+
+    public static function getFields(): array
+    {
+        return [
+        ];
+    }
+
+    public static function getSettingFields(): ?Section
+    {
+        return Section::make(__('{{ label }} Integration'))
+            ->schema([
+            ]);
+    }
+
+
+
+    public function getBalance(): float
+    {
+        return 0.0;
+    }
+
+}

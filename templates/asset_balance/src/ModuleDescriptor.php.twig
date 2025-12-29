@@ -1,0 +1,43 @@
+<?php
+
+namespace {{ namespace }};
+
+use Composer\InstalledVersions;
+use Patrimeo\Contracts\AddonDescriptor;
+use Patrimeo\Contracts\Enums\Capability;
+use {{ namespace }}\{{ classBaseName }}Service;
+
+final class {{ classBaseName }}Descriptor implements AddonDescriptor
+{
+    public function getKey(): string
+    {
+        return '{{ slug }}';
+    }
+
+    public function getCapability(): Capability
+    {
+        return Capability::ASSET_BALANCE;
+    }
+
+    public function getLabel(): string
+    {
+        return '{{ label }}';
+    }
+
+    public function getServiceClass(): string
+    {
+        return {{ classBaseName }}Service::class;
+    }
+
+    public function getVersion(): string
+    {
+        return InstalledVersions::getPrettyVersion(
+            '{{ packageName }}'
+        ) ?? 'dev';
+    }
+
+    public function getDefaultSettings(): array
+    {
+        return [];
+    }
+}

@@ -1,0 +1,16 @@
+<?php
+
+namespace {{ namespace }};
+
+use Patrimeo\Contracts\AddonRegistrar;
+use Illuminate\Support\ServiceProvider;
+use {{ namespace }}\{{ classBaseName }}Descriptor;
+
+final class {{ classBaseName }}ServiceProvider extends ServiceProvider
+{
+
+    public function boot(AddonRegistrar $addonRegistrar)
+    {
+        $addonRegistrar->register(new {{ classBaseName }}Descriptor());
+    }
+}
